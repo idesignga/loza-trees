@@ -1,0 +1,224 @@
+---
+title: "About | iDesign Site Demo"
+description: "Meta description for the page"
+permalink: "/about/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}"/>
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | avif %}"/>
+    <link rel="stylesheet" href="/assets/css/about.css">
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <div id="banner-310">
+        <div class="cs-container">
+            <span class="cs-int-title">Get to Know Us</span>
+            <div class="cs-breadcrumbs">
+                <a href="/" class="cs-link">Home</a>
+                <a href="/about/" class="cs-link cs-active">About Us</a>
+            </div>
+        </div>
+        <!--Background Image-->
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/logs-hero-2.jpg" | resize({ width: 640, height: 600 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/logs-hero-2.jpg" | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/logs-hero-2.jpg" | resize({ width: 640, height: 600 }) | jpeg %}" type="image/jpeg">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/logs-hero-2.jpg" | resize({ width: 2048, height: 942 }) | avif %}" type="image/avif">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/logs-hero-2.jpg" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/logs-hero-2.jpg" | resize({ width: 2048, height: 942 }) | jpeg %}" type="image/jpeg">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/logs-hero-2.jpg" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/logs-hero-2.jpg" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/logs-hero-2.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
+            <img src="{% getUrl "/assets/images/logs-hero-2.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="library" width="1920" height="482" loading="eager" decoding="async">
+        </picture>
+    </div>
+
+<!-- ============================================ -->
+<!--                 Side By Side                 -->
+<!-- ============================================ -->
+
+<section id="sbs-1206">
+    <div class="cs-container">
+        <!-- Left Image Section -->
+        <div class="cs-image-group">
+            <!--To make your own PNG cropped people, use https://www.remove.bg/ to remove the background of any image-->
+            <!--Main Image-->
+            <picture class="cs-picture">
+                <source media="(max-width: 600px)" srcset="/assets/images/hardhat.png">
+                <source media="(min-width: 601px)" srcset="/assets/images/hardhat.png">
+                <img loading="lazy" decoding="async" src="/assets/images/hardhat.png" alt="person with box" width="522" height="793"  aria-hidden="true">
+            </picture>
+            <!--Small Image-->
+            <div class="cs-box">
+                <img class="cs-box-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/growth.svg" alt="icon" width="40" height="40" aria-hidden="true">
+                <span class="cs-box-header">The LOZA Standard</span>
+                <ul class="cs-box-ul">
+                    <li class="cs-box-li">Fully Licensed & Insured</li>
+                    <li class="cs-box-li">24/7 Emergency Support</li>
+                    <li class="cs-box-li">Local Landscape Expertise</li>
+                </ul>
+            </div>
+            <div class="cs-stat">
+                <div class="cs-ring-wrapper">
+                    <span class="cs-number">99%</span>
+                    <!--Change the --ratio to the decimal percentage of this circle-->
+                    <svg class="cs-ring" style="--ratio: 0.95">
+                        <circle cx="50%" cy="50%" r="50%"/>
+                        <circle cx="50%" cy="50%" r="50%"/>
+                    </svg>
+                </div>
+                <span class="cs-header">Property Protection Rate</span>
+                <span class="cs-desc">Across more than 500 Properties</span>
+            </div>
+            <!--Circle Graphic-->
+            <img class="cs-graphic" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/swirl.svg" alt="graphic" width="950" height="950" aria-hidden="true">
+        </div>
+        <!-- Right Content Section-->
+        <div class="cs-content">
+            <span class="cs-topper">About Us</span>
+            <h2 class="cs-title">Your Trees Really Are Our Passion</h2>
+            <h3 class="cs-h3">At Loza Tree Services, we believe that every landscape has the potential to be a masterpiece.</h3>
+            <p class="cs-text">
+                We don't just cut trees; we provide expert care that prioritizes the long-term health of your environment and the safety of your home, ensuring that "Your Trees, Our Passion" is more than just a slogan—it is the standard we live by every day.
+            </p>
+            <div class="cs-content-flair">
+                <ul class="cs-ul">
+                    <li class="cs-li">Expert Precision</li>
+                    <li class="cs-li">Certified Professionals</li>
+                    <li class="cs-li">Total Cleanup</li>
+                    <li class="cs-li">FREE Estimates</li>
+                </ul>
+                <a href="" class="cs-video-link">
+                    <!--BG Image-->
+                    <img class="cs-video-bg" loading="lazy" decoding="async" src="/assets/images/logs-hero-3.jpg" alt="people" width="280" height="160" aria-hidden="true">
+                    <!--Play Icon-->
+                    <picture class="cs-wrapper">
+                        <img class="cs-link-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/play-sharp2.svg" alt="graphic" width="24" height="24" aria-hidden="true">
+                    </picture>
+                </a>
+            </div>
+            <a class="cs-button-solid" aria-label="learn more about our programs" href="">Get Started</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--              Side By Side Reverse            -->
+<!-- ============================================ -->
+
+<section id="sbsr-2296">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">The LOZA Standard</span>
+            <h2 class="cs-title">Our Works Speaks for Itself</h2>
+            <p class="cs-text">
+                We understand that your home is your greatest investment. That’s why we combine the best equipment with a meticulous eye for detail, ensuring every hazardous tree is removed safely and efficiently without ever leaving a mess behind
+            </p>
+            <h3 class="cs-h3">Our Guarantees</h3>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    <strong>Property Protection</strong>: We ensure your structures and landscape remain untouched.
+                </li>
+                <li class="cs-li">
+                    <strong>Spotless Cleanup</strong>: We leave your yard completely debris-free.
+                </li>
+                <li class="cs-li">
+                    <strong>Transparent Pricing</strong>: The price we quote is the price you pay.
+                </li>
+                <li class="cs-li">
+                    <strong>100% Satisfaction</strong>: Our job isn't done until you are happy.
+                </li>
+            </ul>
+            <a href="" class="cs-button-solid">Choose LOZA</a>
+        </div>
+        <div class="cs-image-group">
+            <!--Main Image-->
+            <div class="cs-picture-wrapper1">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="https://csimages2.nyc3.digitaloceanspaces.com/Images/MISC/construction-after1.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="https://csimages2.nyc3.digitaloceanspaces.com/Images/MISC/construction-after1.jpg">
+                    <img loading="lazy" decoding="async" src="https://csimages2.nyc3.digitaloceanspaces.com/Images/MISC/construction-after1.jpg" alt="wedding" width="272" height="337">
+                </picture>
+                <span class="cs-tag">After</span>
+            </div>
+            <!--Small Image-->
+            <div class="cs-picture-wrapper2">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="https://csimages2.nyc3.digitaloceanspaces.com/Images/MISC/construction-after2.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="https://csimages2.nyc3.digitaloceanspaces.com/Images/MISC/construction-after2.jpg">
+                    <img loading="lazy" decoding="async" src="https://csimages2.nyc3.digitaloceanspaces.com/Images/MISC/construction-after2.jpg" alt="wedding" width="243" height="367">
+                </picture>
+                <span class="cs-tag">After</span>
+            </div>
+            <!--Small Image-->
+            <div class="cs-picture-wrapper3">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="https://csimages2.nyc3.digitaloceanspaces.com/Images/MISC/construction-before.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="https://csimages2.nyc3.digitaloceanspaces.com/Images/MISC/construction-before.jpg">
+                    <img loading="lazy" decoding="async" src="https://csimages2.nyc3.digitaloceanspaces.com/Images/MISC/construction-before.jpg" alt="wedding" width="243" height="367">
+                </picture>
+                <span class="cs-tag">Before</span>
+            </div>
+            <img class="cs-arrow cs-arrow-left" loading="lazy" decoding="async" src="/assets/svgs/before-after-arrow-left.svg" alt="arrow" width="148" height="54">
+            <img class="cs-arrow cs-arrow-right" loading="lazy" decoding="async" src="/assets/svgs/before-after-arrow-right.svg" alt="arrow" width="148" height="54">
+        </div>
+    </div>
+
+</section>
+
+<!-- ============================================ -->
+<!--                   Reviews                    -->
+<!-- ============================================ -->
+
+<section id="reviews-442">
+    <div class="cs-wrapper">
+        <div class="cs-container">
+            <div class="cs-content">
+                <p class="cs-review">
+                    <!--Placed inside p tag for more consistent positioning-->
+                    <img class="cs-quote" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Reviews/quote-left.svg" alt="quote icon" width="120" height="106" loading="lazy" decoding="async" aria-hidden="true">
+                    “Tree work is about more than just clearing space; it’s about preserving the beauty and safety of the homes in our community. We treat every yard as if it were our own, ensuring that our passion for trees translates into peace of mind for your family.”
+                </p>
+                <span class="cs-author">Reynaldo Santana - Owner, LOZA</span>
+            </div>
+            <picture class="cs-picture">
+                <source media="(max-width: 600px)" srcset="/assets/images/loza-portrait.png">
+                <source media="(min-width: 601px)" srcset="/assets/images/loza-portrait.png">
+                <img loading="lazy" decoding="async" src="/assets/images/loza-portrait.png" alt="person looking left" width="328" height="540" aria-hidden="true">
+            </picture>
+        </div>
+    </div>
+</section>
+                                
+<!-- ============================================ -->
+<!--                Empty Space                   -->
+<!-- ============================================ -->
+
+<section id="content-1450">
+    <div class="cs-container">
+        <div class="cs-content">
+        </div>
+    </div>
+</section>
+                                                                                
+                                
+    {% include 'sections/cta.html' %}
+
+{% endblock %}

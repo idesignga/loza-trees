@@ -1,0 +1,374 @@
+---
+title: "iDesign Site Demo"
+description: "Meta description for the page"
+permalink: "/"
+tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <!-- Critical styles are loaded first -->
+    <link rel="stylesheet" href="/assets/css/critical.css"/>
+
+    <!-- If we're in production, defer the rest of the home page styles. In development, always load it. Otherwise the site will break when hot-reload is used. -->
+    {% if client.isProduction %}
+        <link rel="preload" href="/assets/css/local.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript>
+            <link rel="stylesheet" href="/assets/css/local.css">
+        </noscript>
+
+    {% else %}
+        <link rel="stylesheet" href="/assets/css/local.css"/>
+    {% endif %}
+
+    <!-- To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  -->
+    <!-- Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data -->
+    <!-- {% include "components/home-schema.html" %} -->
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero-1467">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Total Tree Care = Total Peace of Mind</h1>
+            <p class="cs-text">
+                Our certified specialists manage everything from hazardous removals to stump grinding, ensuring your property stays protected and pristine.
+            </p>
+            <a href="" class="cs-button-solid">Call Us Now</a>
+            <div class="cs-reviews" aria-hidden="true">
+                <div class="cs-reviews-flex">
+                    <img class="cs-reviews-img" decoding="async" fetchpriority="high" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hero-profile1.png" alt="icon" width="48" height="48">
+                    <img class="cs-reviews-img" decoding="async" fetchpriority="high" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hero-profile2.png" alt="icon" width="48" height="48">
+                    <img class="cs-reviews-img" decoding="async" fetchpriority="high" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hero-profile3.png" alt="icon" width="48" height="48">
+                    <img class="cs-reviews-img" decoding="async" fetchpriority="high" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hero-profile4.png" alt="icon" width="48" height="48">
+                    <img class="cs-reviews-img" decoding="async" fetchpriority="high" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hero-profile5.png" alt="icon" width="48" height="48">
+                    <span class="cs-reviews-number">+2k</span>
+                </div>
+            </div>
+            <div class="cs-stars">
+                <img class="cs-icon" decoding="async" fetchpriority="high" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/star-single.svg" alt="icon" width="16" height="16">
+                <img class="cs-icon" decoding="async" fetchpriority="high" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/star-single.svg" alt="icon" width="16" height="16">
+                <img class="cs-icon" decoding="async" fetchpriority="high" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/star-single.svg" alt="icon" width="16" height="16">
+                <img class="cs-icon" decoding="async" fetchpriority="high" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/star-single.svg" alt="icon" width="16" height="16">
+                <img class="cs-icon" decoding="async" fetchpriority="high" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/star-single.svg" alt="icon" width="16" height="16">
+            </div>
+            <p class="cs-desc">
+                Loza Trees rated 4.9/5 based on over 2,000 reviews.
+            </p>
+        </div>
+        <div class="cs-right">
+            <span class="cs-tag">
+                Online Special
+                <span class="cs-dot" aria-hidden="true"></span>
+            </span>
+            <div class="cs-flex">
+                <h3 class="cs-h3">Get 10% OFF Your First Service Today</h3>
+                <span class="cs-expires">Offer Expires April 1st!</span>
+                <p class="cs-form-text">
+                    Request a FREE* no-obligation quote & get expert advice from our team!
+                </p>
+            </div>
+            <!--Form-->
+            <form class="cs-form" id="cs-form-1467" name="Contact Form" method="post">
+                <label class="cs-label">
+                    Name
+                    <input class="cs-input" required type="text" id="name-1467" name="name">
+                </label>
+                <label class="cs-label">
+                    Phone
+                    <input class="cs-input" required type="tel" id="phone-1467" name="phone">
+                </label>
+                <label class="cs-label">
+                    Email
+                    <input class="cs-input" required type="email" id="email-1467" name="email">
+                </label>
+                <label class="cs-label">
+                    How did you hear about us?
+                    <input class="cs-input" required type="text" id="hear-1467" name="heat">
+                </label>
+                <label class="cs-label cs-message">
+                    Message
+                    <textarea class="cs-input cs-textarea" required name="Message" id="message-1467"></textarea>
+                </label>
+                <button class="cs-button-solid cs-submit" type="submit">Get Estimate</button>
+            </form>
+            <p class="cs-disclaimer">
+                <img class="cs-disclaimer-icon" decoding="async" fetchpriority="high" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/lock.svg" alt="icon" width="20" height="20">
+                *Free estimates for homeowners only. Real estate evaluations are billable.
+            </p>
+        </div>
+    </div>
+
+    <!-- Background Image, added in CSS as a backgorund image for parallax effect -->
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="/assets/images/logs-hero-3.jpg">
+        <source media="(min-width: 601px)" srcset="/assets/images/logs-hero-3.jpg">
+        <img loading="lazy" decoding="async" src="/assets/images/logs-hero-3.jpg" alt="logs" width="1920" height="1200" aria-hidden="true">
+    </picture>
+</section>
+            
+<!-- ============================================ -->
+<!--                Who We Serve                  -->
+<!-- ============================================ -->
+
+<section id="services-2414">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex">
+                <span class="cs-topper">Who We Serve</span>
+                <h2 class="cs-title">Serving Greater Hall County</h2>
+                <p class="cs-text">
+                    Whether you’re a homeowner, property manager, or busy professional, our services help keep your spaces clean and enjoyable year-round.
+                </p>
+                <a href="" class="cs-button-solid">Get A Free Estimate</a>
+            </div>
+            <div class="cs-image-group">
+                <!-- <picture class="cs-map">
+                    !--Mobile Image--
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/map.png">
+                    !--Tablet and above Image--
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/map.png">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/map.png" alt="map of san jose" width="522" height="504">
+                </picture> -->
+                <!--Uncomment and remove the picture element if you want to swap in an iframe for your service area. Just copy and paste the iframe code and it will work!-->
+                <div class="cs-map cs-iframe">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d421853.05962073634!2d-84.1683660719688!3d34.30649977559701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885f621ddbd3f249%3A0x93c8ce354711119e!2sHall%20County%2C%20GA!5e0!3m2!1sen!2sus!4v1768766799305!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/squiggle-arrow2.svg" alt="graphic" width="34" height="73" aria-hidden="true">
+                <div class="cs-box">
+                    <span class="cs-box-text">
+                        Hall Co & Surrounding Areas
+                    </span>
+                </div>
+            </div>        
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="/assets/images/homeowner.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="/assets/images/homeowner.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/homeowner.jpg" alt="man with dog" width="184" height="200">
+                </picture>  
+                <h3 class="cs-h3">Property Owners</h3>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dog2.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dog2.jpg">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dog2.jpg" alt="man with dog" width="184" height="200">
+                </picture>  
+                <h3 class="cs-h3">Apartment Complexes</h3>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="/assets/images/hoa.jpg>
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="/assets/images/hoa.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/hoa.jpg" alt="man with dog" width="184" height="200">
+                </picture>  
+                <h3 class="cs-h3">Homeowners Associations</h3>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="/assets/images/public.jpg>
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="/assets/images/public.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/public.jpg" alt="man with dog" width="184" height="200">
+                </picture>  
+                <h3 class="cs-h3">Parks & Public Spaces</h3>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Side By Side                -->
+<!-- ============================================ -->
+
+<section id="sbs-2295">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <!--Main Image-->
+            <div class="cs-picture-wrapper1">
+                <picture class="cs-picture cs-picture1">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="/assets/images/before-and-after/before-4.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="/assets/images/before-and-after/before-4.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/before-and-after/before-4.jpg" alt="construction" width="272" height="337">
+                </picture>
+                <span class="cs-tag">Before</span>
+            </div>
+            <!--Small Image-->
+            <div class="cs-picture-wrapper2">
+                <picture class="cs-picture cs-picture2">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="/assets/images/before-and-after/after-4.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="/assets/images/before-and-after/after-4.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/before-and-after/after-4.jpg" alt="construction" width="243" height="367">
+                </picture>
+                <span class="cs-tag">After</span>
+            </div>
+            <img class="cs-arrow" loading="lazy" decoding="async" src="/assets/svgs/before-after-arrow.svg" alt="arrow" width="148" height="54">
+        </div>
+        <div class="cs-content">
+            <span class="cs-topper">Service</span>
+            <h2 class="cs-title">Expert Tree Removal</h2>
+            <p class="cs-text">
+                Our team utilizes specialized equipment and industry-leading techniques to safely dismantle and remove trees of any size from your property. We prioritize precision and safety to ensure your home remains protected while we efficiently clear away hazardous or unwanted growth.
+            </p>
+            <h3 class="cs-h3">Our Process</h3>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    <strong>Site Assessment</strong>: We conduct a thorough inspection of the tree’s health and the surrounding area to develop a safe, strategic felling plan.
+                </li>
+                <li class="cs-li">
+                    <strong>Precision Rigging</strong>: Our expert team dismantles the tree from the top down, using specialized rigging to lower heavy limbs safely and protect your property.
+                </li>
+                <li class="cs-li">
+                    <strong>Debris Processing</strong>: We process all logs and brush through industrial chippers, ensuring all waste is cleared from your lawn efficiently.
+                </li>
+                <li class="cs-li">
+                    <strong>Pristine Cleanup</strong>: Our crew performs a final walkthrough and deep clean of the area, leaving your landscape spotless and debris-free.
+                </li>
+            </ul>
+            <a href="" class="cs-button-solid">Get Your Estimate</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Stats                      -->
+<!-- ============================================ -->
+
+<!-- No headers, so no section tag -->
+<div id="stats-340">
+    <ul class="cs-card-group">
+        <li class="cs-item">
+            <picture class="cs-picture">
+                <img class="cs-icon" src="/assets/svgs/person.svg" alt="icon" width="35" height="40" loading="lazy" decoding="async" aria-hidden="true">
+            </picture>
+            <div class="cs-flex-group">
+                <span class="cs-number">12</span>
+                <span class="cs-desc">Dedicated Team Members</span>
+            </div>
+        </li>
+        <li class="cs-item">
+            <picture class="cs-picture">
+                <img class="cs-icon" src="/assets/svgs/thumbs-up.svg" alt="icon" width="40" height="40" loading="lazy" decoding="async" aria-hidden="true">
+            </picture>
+            <div class="cs-flex-group">
+                <span class="cs-number">2260</span>
+                <span class="cs-desc">Satisfied Property Owners</span>
+            </div>
+        </li>
+        <li class="cs-item">
+            <picture class="cs-picture">
+                <img class="cs-icon" src="/assets/svgs/home-protection.svg" alt="icon" width="40" height="35" loading="lazy" decoding="async" aria-hidden="true">
+            </picture>
+            <div class="cs-flex-group">
+                <span class="cs-number">99%</span>
+                <span class="cs-desc">Property Protection Rate</span>
+            </div>
+        </li>
+        <li class="cs-item">
+            <picture class="cs-picture">
+                <img class="cs-icon" src="/assets/svgs/recycle.svg" alt="icon" width="40" height="40" loading="lazy" decoding="async" aria-hidden="true">
+            </picture>
+            <div class="cs-flex-group">
+                <span class="cs-number">500</span>
+                <span class="cs-desc">Tons of Debris Processed</span>
+            </div>
+        </li>
+    </ul>
+    <!--Background Image-->
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="/assets/images/logs-hero.jpg">
+        <source media="(min-width: 601px)" srcset="/assets/images/logs-hero.jpg">
+        <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/logs-hero.jpg" alt="cleaning products" width="1920" height="283">
+    </picture>
+</div>
+
+<!-- ============================================ -->
+<!--                  Reviews                     -->
+<!-- ============================================ -->
+
+<section id="reviews-2354">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Testimonials</span>
+            <h2 class="cs-title">What Our Clients Have to Say</h2>
+        </div>                  
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <span class="cs-featured">“Loza Tree Service did an excellent job with our tree removal.”</span>
+                <p class="cs-item-text">
+                    The crew was professional, efficient, and clearly experienced. They safely removed all of the trees without damaging surrounding property and completed the job faster than expected. Cleanup was thorough, and you would not have known a tree was there when they finished. Communication was clear, pricing was fair, and the entire process was stress-free.
+                </p>
+                <div class="cs-info">
+                    <picture class="cs-profile-wrapper">
+                        <img class="cs-profile" loading="lazy" decoding="async" src="/assets/images/drew.png" alt="person" width="52" height="52">
+                    </picture>
+                    <span class="cs-name">
+                        Andrew Nguyen
+                        <span class="cs-desc">Local Business Owner</span>
+                    </span>
+                </div>
+                <img class="cs-quote" loading="lazy" decoding="async" src="/assets/svgs/quote.svg" alt="quote" width="86" height="69">
+            </li>
+            <li class="cs-item">
+                <span class="cs-featured">“They did amazing work for us!”</span>
+                <p class="cs-item-text">
+                    Loza transformed our property into a masterpiece. Their attention to detail and innovative approach to land clearing brought our vision to life in ways we never imagined. They handled the most difficult removals with surgical precision, leaving our landscape safer and more beautiful than ever before. We were thoroughly impressed by their professional cleanup and the way they treated our home like it was their own.
+                </p>
+                <div class="cs-info">
+                    <picture class="cs-profile-wrapper">
+                        <img class="cs-profile" loading="lazy" decoding="async" src="/assets/images/raven.png" alt="person" width="52" height="52">
+                    </picture>
+                    <span class="cs-name">
+                        Raven Daniel
+                        <span class="cs-desc">Local Homeowner</span>
+                    </span>
+                </div>
+                <img class="cs-quote" loading="lazy" decoding="async" src="/assets/svgs/quote.svg" alt="quote" width="86" height="69">
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="/assets/images/logs-hero-2.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="/assets/images/logs-hero-2.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/logs-hero-2.jpg" alt="building" width="955" height="636">
+                </picture>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                Empty Space                   -->
+<!-- ============================================ -->
+
+<section id="content-1450">
+    <div class="cs-container">
+        <div class="cs-content">
+        </div>
+    </div>
+</section>
+                                
+
+    {% include 'sections/cta.html' %}
+{% endblock %}
