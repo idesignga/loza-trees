@@ -1,6 +1,6 @@
 ---
-title: "iDesign Site Demo"
-description: "Meta description for the page"
+title: "Loza Tree Services | Expert Tree Care in Hall County, GA"
+description: "Expert tree care in Hall County, GA. Our certified specialists manage everything from hazardous removals to stump grinding, ensuring your property stays protected and pristine."
 permalink: "/"
 tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
 ---
@@ -78,23 +78,29 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
             <form class="cs-form" id="cs-form-1467" name="Contact Form" method="post" netlify>
                 <label class="cs-label">
                     Name
-                    <input class="cs-input" required type="text" id="name-1467" name="name">
+                    <input class="cs-input" required type="text" name="name" placeholder="Name">
                 </label>
-                <label class="cs-label">
-                    Phone
-                    <input class="cs-input" required type="tel" id="phone-1467" name="phone">
-                </label>
-                <label class="cs-label">
+                <label class="cs-label cs-email">
                     Email
-                    <input class="cs-input" required type="email" id="email-1467" name="email">
+                    <input class="cs-input" required type="email" name="email" placeholder="Email">
+                </label>
+                <label class="cs-label cs-phone">
+                    Phone
+                    <input class="cs-input" required type="tel" name="phone" placeholder="Phone">
+                </label>
+                <label class="cs-label cs-services">
+                    What Service Are You Interested In?
+                    <select class="cs-input" name="Services">
+                        <option value="" disabled selected>Select a Service</option>
+                        <option value="Tree Removal">Tree Removal</option>
+                        <option value="Tree Pruning">Tree Pruning</option>
+                        <option value="Stump Grinding">Stump Grinding</option>
+                        <option value="Other">Other</option>
+                    </select>
                 </label>
                 <label class="cs-label">
-                    How did you hear about us?
-                    <input class="cs-input" required type="text" id="hear-1467" name="heat">
-                </label>
-                <label class="cs-label cs-message">
-                    What service are you interested in?
-                    <textarea class="cs-input cs-textarea" required name="Message" id="message-1467"></textarea>
+                    Message or Question
+                    <textarea class="cs-input cs-textarea" required name="Message" placeholder="Write message..."></textarea>
                 </label>
                 <button class="cs-button-solid cs-submit" type="submit">Get Estimate</button>
             </form>
